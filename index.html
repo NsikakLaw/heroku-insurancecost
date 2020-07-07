@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Insurance Bill</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="styling.css">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Insurance Bill</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="age" placeholder="Age" required="required" /><br>
+    	<label for="gender">Gender:</label>
+		<input type="radio" id="male" name="gender" value="male" required>
+				<label for="male">Male</label>
+		<input type="radio" id="female" name="gender" value="female">
+				<label for="female">Female</label><br>
+		
+        <input type="text" name="bmi" placeholder="BMI" required="required" /><br>
+        <input type="text" name="children" placeholder="Children" required="required" /><br>
+		<label for="smoker">Are you a smoker?: </label>
+		<input type="radio" id="smokerno" name="smoker" value="No" required>
+				<label for="smokerno">No</label>
+		<input type="radio" id="smokeryes" name="smoker" value="Yes">
+				<label for="smokeryes">Yes</label><br>
+		 <label for="region">Choose your Region:</label>
+			<select name="region" id="region" required>
+				<option value="">None</option>
+				<option value="southwest">South-West</option>
+				<option value="southeast">South-East</option>
+				<option value="northeast">North-East</option>
+				<option value="northwest">North-West</option>
+			</select>	<br>
+				
+				
+        
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Insurance Cost</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>

@@ -7,7 +7,7 @@
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link type="text/css" rel="stylesheet" href="styling.css">
+<link rel="stylesheet" href="{{ url_for('static',    filename='css/styling.css') }}">
   
 </head>
 
@@ -16,7 +16,8 @@
 	<h1>Predict Insurance Bill</h1>
 
      <!-- Form to enter new data for predictions  -->
-    <form action="{{ url_for('predict')}}"method="POST">
+
+	<form>
       <input type="text" name="age" placeholder="Age" required="required" /><br>
     	<label for="gender">Gender:</label>
 		<input type="radio" id="male" name="gender" value="male" required>
@@ -51,7 +52,7 @@
   
    
  </div>
- {{pred}}
+ <!--{{pred}} -->
 
 </body>
 </html>
